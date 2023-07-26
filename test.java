@@ -1,12 +1,20 @@
 public class test {
     public static void main(String[] args) {
-
+        long startTime = System.nanoTime();
         int n = 100000;
         String resultUsingString = getResultUsingString(n);
         System.out.println("Result using String: " + resultUsingString);
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
 
-//        String resultUsingStringBuilder = getResultUsingStringBuilder(n);
-//        System.out.println("Result using StringBuilder: " + resultUsingStringBuilder);
+        long startTimeSB = System.nanoTime();
+        String resultUsingStringBuilder = getResultUsingStringBuilder(n);
+        System.out.println("Result using StringBuilder: " + resultUsingStringBuilder);
+        long endTimeSB = System.nanoTime();
+        long durationSB = (endTimeSB - startTimeSB);  //divide by 1000000 to get milliseconds.
+
+        System.out.println("executed time String: " + duration/1000000 +"ms");
+        System.out.println("executed time StringBuilder: " + durationSB/1000000 +"ms");
 
     }
 
