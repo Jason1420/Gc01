@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Gc01.iml" filepath="$PROJECT_DIR$/Gc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GarbageCollectionAndThread.iml" filepath="$PROJECT_DIR$/GarbageCollectionAndThread.iml" />
     </modules>
   </component>
 </project>

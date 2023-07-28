@@ -1,3 +1,5 @@
+package GarbageCollection;
+
 public class TestHeap {
     public static void main(String[] args) throws InterruptedException {
         TestHeap[] list = new TestHeap[1000000000];

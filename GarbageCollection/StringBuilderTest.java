@@ -1,4 +1,6 @@
-public class test {
+package GarbageCollection;
+
+public class StringBuilderTest {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         int n = 100000;
