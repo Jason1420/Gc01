@@ -6,7 +6,7 @@ public class RaceConditionTest {
     public static void main(String[] args) {
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < 100000; i++) {
-//                synchronized (Thread.RaceConditionTest.class){
+//                synchronized (RaceConditionTest.class){
                     count++;
 //                }
 //                System.out.println("Thread 1 >> " +i+" >> " + count);
@@ -15,7 +15,7 @@ public class RaceConditionTest {
 
         Thread thread2 = new Thread(() -> {
             for (int i = 0; i < 100000; i++) {
-//                synchronized (Thread.RaceConditionTest.class){
+//                synchronized (RaceConditionTest.class){
                     count++;
 //                }
 //                System.out.println("Thread 2 >> " +i +" >> " + count);

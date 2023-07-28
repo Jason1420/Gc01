@@ -1,4 +1,4 @@
-package Thread;
+package Thread.synchronization;
 
 public class MultiThread {
     public static void main(String[] args) {

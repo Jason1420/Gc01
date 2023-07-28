@@ -1,9 +1,11 @@
-package Thread;
+package Thread.synchronization;
 
-public class ThreadSquare implements Runnable {
+import java.util.Random;
+
+public class ThreadRandom implements Runnable {
     SharedData sharedData;
 
-    public ThreadSquare(SharedData sharadData) {
+    public ThreadRandom(SharedData sharadData) {
         this.sharedData = sharadData;
     }
 
@@ -12,16 +14,18 @@ public class ThreadSquare implements Runnable {
         for (int i = 0; i < 10; i++){
 
             synchronized (sharedData){
+                Random random = new Random();
+                sharedData.rad = random.nextInt(10);
+                System.out.println("T1 >> "+ sharedData.rad);
+
+                sharedData.notifyAll();
                 try {
                     sharedData.wait();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("T2 >> "+ sharedData.rad*sharedData.rad);
-                sharedData.notifyAll();
-
             }
         }
-        System.out.println("T2");
+        System.out.println("T1");
     }
 }

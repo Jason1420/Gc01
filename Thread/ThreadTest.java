@@ -6,7 +6,7 @@ public class ThreadTest {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i =0; i < 10; i ++){
+                for(int i =0; i < 1000000000; i ++){
                     System.out.println("Thread 1 >> " + i);
                 }
             }
@@ -15,7 +15,7 @@ public class ThreadTest {
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i =0; i < 10; i ++){
+                for(int i =0; i < 1000000000; i ++){
                     System.out.println("Thread 2 >> " + i);
                 }
             }
@@ -26,5 +26,22 @@ public class ThreadTest {
 //        t1.join();
         System.out.println("Stop main thread");
 
+    }
+    public synchronized void instanceMethod() {
+        // Các thao tác được đồng bộ hóa trên đối tượng this
+    }
+
+    public void methodWithSynchronizedBlock() {
+        // Các thao tác không đồng bộ ở đây
+
+        synchronized (this) {
+            // Các thao tác được đồng bộ hóa bên trong khối synchronized
+        }
+
+        // Các thao tác không đồng bộ ở đây
+    }
+
+    public static synchronized void staticMethod() {
+        // Các thao tác được đồng bộ hóa trên lớp này
     }
 }
