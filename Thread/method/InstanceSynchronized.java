@@ -4,7 +4,7 @@ public class InstanceSynchronized {
     private int count = 0;
 
     public synchronized void increment() {
-        count++; // Thực hiện việc tăng biến count một lần duy nhất bởi một luồng tại một thời điểm
+        count++;
     }
 
     public int getCount() {

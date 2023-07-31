@@ -11,7 +11,8 @@ public class BlockSynchronized {
 
     public void increment() {
         synchronized (lock) {
-            count++; // Thực hiện việc tăng biến count một lần duy nhất bởi một luồng tại một thời điểm
+            count++;
+            System.out.println(Thread.currentThread().getName() + "  "+count);
         }
     }
     public static void main(String[] args) {
@@ -19,13 +20,13 @@ public class BlockSynchronized {
 
         // Tạo và chạy 2 luồng đồng thời
         Thread thread1 = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 10; i++) {
                 example.increment();
             }
         });
 
         Thread thread2 = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 10; i++) {
                 example.increment();
             }
         });

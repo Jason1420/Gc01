@@ -19,7 +19,6 @@ public class ThreadSquare implements Runnable {
                 }
                 System.out.println("T2 >> "+ sharedData.rad*sharedData.rad);
                 sharedData.notifyAll();
-
             }
         }
         System.out.println("T2");

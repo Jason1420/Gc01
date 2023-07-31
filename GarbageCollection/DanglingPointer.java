@@ -10,7 +10,6 @@ public class DanglingPointer {
             System.out.println("b = " + b);
 
             a = null;
-
             System.out.println("a = " + a);
             System.out.println("b = " + b);
 

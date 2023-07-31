@@ -15,7 +15,7 @@ public class ThreadPool2 {
     public static class Task implements Runnable {
         @Override
         public void run() {
-            System.out.println("Thread name >> " + Thread.currentThread().getName());
+            System.out.println("Thread name: " + Thread.currentThread().getName());
         }
     }
 }

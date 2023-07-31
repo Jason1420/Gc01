@@ -4,7 +4,7 @@ public class StaticSynchronized {
     private static int count = 0;
 
     public static synchronized void increment() {
-        count++; // Thực hiện việc tăng biến count một lần duy nhất bởi một luồng tại một thời điểm
+        count++;
     }
 
     public static void main(String[] args) throws InterruptedException {
