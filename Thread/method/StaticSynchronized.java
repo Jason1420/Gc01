@@ -5,16 +5,17 @@ public class StaticSynchronized {
 
     public static synchronized void increment() {
         count++;
+        System.out.println(Thread.currentThread().getName() + "  "+count);
     }
-
+// đồng bộ static trên lớp, nên không cần tạo đối tượng
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() ->{
-            for(int i = 0; i< 10000; i++){
+            for(int i = 0; i< 10; i++){
                 increment();
             }
         });
         Thread t2 = new Thread(() ->{
-            for(int i = 0; i< 10000; i++){
+            for(int i = 0; i< 10; i++){
                 increment();
             }
         });

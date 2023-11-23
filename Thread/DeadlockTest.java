@@ -28,7 +28,7 @@ public class DeadlockTest {
         public void run() {
             while(true){
                 synchronized (s2){
-                    synchronized (s1){
+                    synchronized (s1) {
                         System.out.println(s1 + s2);
                     }
                 }

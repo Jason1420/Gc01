@@ -11,12 +11,12 @@ public class ThreadRandom implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
 
-            synchronized (sharedData){
+            synchronized (sharedData) {
                 Random random = new Random();
                 sharedData.rad = random.nextInt(10);
-                System.out.println("T1 >> "+ sharedData.rad);
+                System.out.println("T1 >> " + sharedData.rad);
 
                 sharedData.notifyAll();
                 try {

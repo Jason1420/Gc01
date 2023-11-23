@@ -12,6 +12,8 @@ public class InstanceSynchronized {
     }
 
     public static void main(String[] args) {
+        // khi thực hiện synchonized method increment có nghĩa laf đồng bộ trên đối tượng
+        // cần phải có một đối tượng để gọi hàm increment
         InstanceSynchronized example = new InstanceSynchronized();
 
         // Tạo và chạy 2 luồng đồng thời

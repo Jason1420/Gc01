@@ -9,15 +9,15 @@ public class ThreadSquare implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
 
-            synchronized (sharedData){
+            synchronized (sharedData) {
                 try {
                     sharedData.wait();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("T2 >> "+ sharedData.rad*sharedData.rad);
+                System.out.println("T2 >> " + sharedData.rad * sharedData.rad);
                 sharedData.notifyAll();
             }
         }

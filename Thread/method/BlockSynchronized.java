@@ -8,9 +8,9 @@ public class BlockSynchronized {
     }
 
     private Object lock = new Object();
-
+    // đồng bộ trên một đối tượng riêng biệt
     public void increment() {
-        synchronized (lock) {
+        synchronized (/*this*/ lock) {
             count++;
             System.out.println(Thread.currentThread().getName() + "  "+count);
         }
